@@ -5,28 +5,11 @@ session_start();
     header("Location: /auth.php");
     exit;
 }*/
-/*
-echo '<div style="text-align:right;">Если сильно сдвинуть вправо, влево будет нечего двигать.<br>';
-$f = 010; echo '$f = 010 =>', $f, '<br>';
-$f >>= 20; echo '$f >>= 20 =>', $f, '<br>';
-$f <<= 20; echo '$f <<= 20 =>', $f, '<br>';
-$f = 010; echo '$f = 010 =>', $f, '<br>';
-$f <<= 20; echo '$f <<= 20 =>', $f, '<br>';
-$f >>= 20; echo '$f >>= 20 =>', $f, '<br></div>';*/
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-   
-<?php
+
+require_once 'begin.php';
+require_once 'css.html';
+require_once 'menu.php';
 require_once 'function.php';
-require_once 'formsearch.php';
 //Читаем данные из файла 
 $file = file_get_contents('data/chizcher.json', 'data/');
 //$file = file_get_contents('data/chiz.json', 'data/');
@@ -83,25 +66,7 @@ foreach ($items as $ikey) {
     $tprice += $kprice;
     $tweight += $iweight; 
 }
-
 echo '
-<style>
-body{
-    text-align: center;
-    font-size: 100%;
-}
-.rc, .rca, .rci{
-    width: 100%;
-    /* display: flex; justify-content: flex-end; flex-wrap: wrap; */
-}
-.rc span:nth-child(1n), .rca span:nth-child(1n), .rci input:nth-child(1n){
-    display: inline-block;
-    width: 8em;
-    text-align: right;
-}
-.rc span:nth-child(1), .rci input:nth-child(1){display: inline-block;width: 18em; text-align: left;}
-
-</style>
 <div class="rc">
 <span>Ингридиенты</span><span>Вес,кг.</span><span>Стоимость,руб.</span><span>%</span>
 <hr>
@@ -127,9 +92,5 @@ echo '</div>';
 
 echo 'Предполагаемая цена продажи: ', okrug($tprice*3), 'руб.';
 
-require 'formadd.php';
+require_once 'end.php';
 ?>
-
-<script type="text/javascript" src="js/searchfront.js"></script>
-</body>
-</html>

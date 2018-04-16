@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <a href="calculation.php">calculation</a>
-</body>
-</html>
+<?php 
+require_once 'begin.php';
+require_once 'css.html';
+require_once 'menu.php';
+require_once 'end.php';?>
